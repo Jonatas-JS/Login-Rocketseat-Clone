@@ -9,7 +9,25 @@ body {
   /* font-family: 'Fira Code', monospace; */
   font-family: 'Roboto', sans-serif;
   width: 100%;
+  height: 100%;
+  /* overflow-y: hidden; */
 }
+
+/* =============== sidebar-setup =============== */
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(18, 18, 20);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(68, 68, 68);
+  border-radius: 28px;
+}
+
+
 .container {
   display: flex;
   align-items: center;
@@ -17,6 +35,7 @@ body {
 }
 .contentForm {
   padding: 2rem;
+  padding-bottom: 5rem;
   width: 100vw;
   max-width: 550px;
 }
@@ -28,29 +47,26 @@ a {
 
 .logo {
   color: rgb(225, 225, 230);
-  padding-top: .5rem;
+  padding-top: 1.7rem;
 }
 .logo h1 {
   margin-top: 4rem;
   font-size: 54px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 form {
   background-color: rgb(32, 32, 36);
-  padding: 4rem;
+  padding: 3rem 4rem;
   border-radius: .4rem;
 
   color: rgb(225, 225, 230);
   font-size: .9rem;
 }
-.customInput {
-  display: flex;
-  align-items: center;
-}
+
 
 form input {
-  /* position: relative; */
+  position: relative;
   background-color: rgb(18, 18, 20);
   border-color: rgb(18, 18, 20);
   border-style: none;
@@ -65,10 +81,13 @@ form input {
   font-size: 1rem;
   font-weight: 400;
 }
-form .customInput svg {
-  position: absolute;
-  /* color: rgb(32, 32, 36); */
+.customInput svg {
+  position: relative;
+  z-index: 2;
+  color: rgb(32, 32, 36);
   font-size: 1rem;
+  left: 4%;
+  top: 4vh;
 }
 
 button {
@@ -89,13 +108,21 @@ button {
   justify-content: center;
   gap: .3rem;
 }
+
+.lineSeparation {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.08;
+  margin: .4rem;
+}
+
 .otherLogin {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin: 4rem 0 0 0;
+  margin: 1.2rem 0 0 0;
   gap: 1.5rem;
 }
 .otherLogin a {
@@ -120,3 +147,20 @@ button {
 .otherLogin a:hover svg {
   color: rgb(225, 225, 230);
 }
+
+/* @media (max-width: 479px) {
+  .app{
+    display: grid;
+    gap: 0;
+  }
+} */
+
+/* @media (min-width: 480px) {
+  .contentForm {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7vw;
+  }
+} */
